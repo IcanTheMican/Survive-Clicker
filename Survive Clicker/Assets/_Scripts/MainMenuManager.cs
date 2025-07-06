@@ -7,6 +7,10 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject gameOver2Panel;
+    [SerializeField] private GameObject badEndingPanel;
+    [SerializeField] private GameObject goodEndingPanel;
     [SerializeField] private GameObject pausePanel;
 
     private void Update()
@@ -31,10 +35,19 @@ public class MainMenuManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     public void BackToMainMenu() 
     {
         mainMenuPanel.SetActive(true);
         optionsPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+        gameOver2Panel.SetActive(false);
+        badEndingPanel.SetActive(false);
+        goodEndingPanel.SetActive(false);
     }
 
     public void PauseGame()
