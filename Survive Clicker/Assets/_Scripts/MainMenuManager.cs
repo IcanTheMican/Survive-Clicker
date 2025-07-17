@@ -1,5 +1,6 @@
+using TMPro;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject badEndingPanel;
     [SerializeField] private GameObject goodEndingPanel;
     [SerializeField] private GameObject pausePanel;
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !mainMenuPanel.activeSelf && !optionsPanel.activeSelf)

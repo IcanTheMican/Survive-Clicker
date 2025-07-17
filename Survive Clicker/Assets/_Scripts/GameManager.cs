@@ -1,7 +1,9 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+
+//Save system se koristi u metodama Starve i Ending na kraju
+//Zao mi je ak morate gledat ovaj kod :(
 
 public class GameManager : MonoBehaviour
 {
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject goodEndingPanel;
 
     private float timer;
+    private float timeElapsed;
     private int farmCost;
     private int blacksmithCost;
     public bool isGameOver;
@@ -109,6 +112,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         timer += Time.deltaTime;
+        timeElapsed += Time.deltaTime; 
         dayCounter.fillAmount = 1-timer/12;
         if (timer >= 12)
         {
@@ -442,6 +446,7 @@ public class GameManager : MonoBehaviour
     //Endings
     void Starve() 
     {
+        SaveSystem.SaveResults(timeElapsed, "GAME OVER (STARVE)", food, tools);
         gamePanel.SetActive(false);
         gameOver2Panel.SetActive(true);
     }
@@ -450,16 +455,19 @@ public class GameManager : MonoBehaviour
     {
         if(tools >= 100) 
         {
+            SaveSystem.SaveResults(timeElapsed, "WAR", food, tools);
             gamePanel.SetActive(false);
             badEndingPanel.SetActive(true);
         }
         else if(food >= 200) 
         {
+            SaveSystem.SaveResults(timeElapsed, "FRIENDSHIP", food, tools);
             gamePanel.SetActive(false);
             goodEndingPanel.SetActive(true);
         }
         else
         {
+            SaveSystem.SaveResults(timeElapsed, "GAME OVER", food, tools);
             gamePanel.SetActive(false);
             gameOverPanel.SetActive(true);
         }
