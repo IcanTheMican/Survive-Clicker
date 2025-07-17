@@ -425,6 +425,7 @@ public class GameManager : MonoBehaviour
         tools = 0;
         introPassed = false;
         timer = 0;
+        timeElapsed = 0;
         farmCost = 1;
         blacksmithCost = 2;
         isGameOver = false;

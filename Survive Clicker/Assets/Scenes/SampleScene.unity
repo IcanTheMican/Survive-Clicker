@@ -6969,8 +6969,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The Crab is approaching.\nHelp the village grow in order to\n prevent
-    catastrophe.\n\n[To win, you must gather \neither 200 food, or 100 weapons.]"
+  m_text: "The Crab is approaching. \nYou have 20 days to help \nthe village grow
+    in order to \nprevent catastrophe.\n\n[To win, you must gather \neither 200 food
+    or 100 weapons.]"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4008d1f66fba2a4fb268c802be5a863, type: 2}
   m_sharedMaterial: {fileID: 4183223087982654896, guid: b4008d1f66fba2a4fb268c802be5a863, type: 2}
